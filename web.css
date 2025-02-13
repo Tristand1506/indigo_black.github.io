@@ -1,4 +1,13 @@
 /* Reset some broser defaults */
+/* 
+Swatch Codes
+ Black - #000000
+ Persian Indigo - #44196d
+ Amethyst - #8d75b6
+ Periwinkle - #cbbde8
+ White - ffffff 
+*/
+
 body, h1 ,h2, p,ul, li{
   margin: 0;
   padding: 0;
