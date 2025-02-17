@@ -7,14 +7,111 @@ Swatch Codes
  Periwinkle - #cbbde8
  White - ffffff 
 */
-
+:root{
+  --persian-indigo: #44196d;
+  --amethyst: #8d75b6;
+  --periwinkle: #cbbde8;
+}
 html{
   height: 100%;
   width: 100%;
   background: black;
 }
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  background-color: var(--persian-indigo);
+  padding-inline-start: 5vw;
+  padding-inline-end: 5vw;
+  gap: 2vw;
+  
+  h1{
+    color: var(--persian-indigo); 
+  }
+}
+
 body, h1 ,h2, p,ul, li{
   margin: 0;
   padding: 0;
   color: white;
+}
+
+.nav-flair{
+height: 2px;
+flex-grow: 1;
+background-color: var(--periwinkle);
+}
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem
+}
+
+.nav-item {
+  color: white;
+  list-style-type: none;
+  font-size: large;
+  height: 100%;
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: calc(100% + 1.25rem);
+  top: calc(50% - 0.25rem);
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--periwinkle);
+}
+
+.nav-item:last-child::after {
+  display: none;
+}
+
+.nav-item > a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-item > a:hover {
+  color: var(--periwinkle);
+}
+.nav-item:hover{
+  text-decoration: underline;
+  text-decoration-color: var(--periwinkle);
+}
+
+
+.image-circular > img{
+  border-radius: 50%;
+}
+.image-header {
+  img {
+    margin-right: 0;
+    width: 25%;
+    height: 25%;
+    padding: 5%;
+  }
+}
+
+.about-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  gap: 5rem;
+  h1{
+    font-size: 5em;
+  }
+  p{
+    font-size: 2em;
+  }
 }
