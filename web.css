@@ -6,6 +6,9 @@ Swatch Codes
  Amethyst - #8d75b6
  Periwinkle - #cbbde8
  White - ffffff 
+
+ Resources
+ Scroll Snap : https://www.youtube.com/watch?v=ytl6TrroGis
 */
 :root{
   --persian-indigo: #44196d;
@@ -13,11 +16,68 @@ Swatch Codes
   --periwinkle: #cbbde8;
 }
 html{
-  height: 100%;
-  width: 100%;
-  background: black;
+  background-color: blue;
+  scroll-snap-type: y proximity;
 }
-header{
+
+
+body, h1 ,h2, p,ul, li{
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+h1{
+  font-size: 5em;
+}
+h2{
+  font-size: 2.5rem;
+}
+p{
+  font-size: 2rem;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  text-align: center;
+  gap: 3rem;
+  scroll-snap-align: end;
+  background-color: var(--amethyst);
+  padding: 10% 5%;
+}
+
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  gap: 15vw;
+  li{
+    text-align: center;
+    font-size: 1.5rem;
+    i{
+      font-size: 3rem;
+    }
+    p{
+      margin:0 -100px;
+    }
+  }
+}
+.links li > a:link, a:visited {
+  color: white;
+}
+
+.links li > a:hover {
+    color: var(--periwinkle);
+}
+
+.nav-bar{
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,35 +87,29 @@ header{
   padding-inline-start: 5vw;
   padding-inline-end: 5vw;
   gap: 2vw;
-  
+  filter: drop-shadow(0px 10px 8px #000000);
   h1{
     color: var(--persian-indigo); 
   }
 }
-
-body, h1 ,h2, p,ul, li{
-  margin: 0;
-  padding: 0;
-  color: white;
-}
-
 .nav-flair{
 height: 2px;
 flex-grow: 1;
 background-color: var(--periwinkle);
 }
+
 .nav-list {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 3rem
+  gap: 4rem
 }
 
 .nav-item {
   color: white;
   list-style-type: none;
-  font-size: large;
+  font-size: 2.5rem;
   height: 100%;
   position: relative;
 }
@@ -63,7 +117,7 @@ background-color: var(--periwinkle);
 .nav-item::after {
   content: "";
   position: absolute;
-  left: calc(100% + 1.25rem);
+  left: calc(100% + 1.75rem);
   top: calc(50% - 0.25rem);
   height: 0.5rem;
   width: 0.5rem;
@@ -100,18 +154,70 @@ background-color: var(--periwinkle);
     padding: 5%;
   }
 }
-
-.about-section{
+.snap-section{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 10%;
+  background-color: black;
+  scroll-snap-align: start;
+  scroll-margin-top: 150px;
+  min-height: calc(100vh - 150px);
   gap: 5rem;
+  padding: 0 10vw;
+}
+.snap-section:nth-child(even){
+  background-color: var(--persian-indigo);
+  h1,h2,p{
+    color: white;
+    }
+} 
+.about-section{  
+  align-items: center;
+  /* padding: 0 10%; */
   h1{
-    font-size: 5em;
+    text-align: center;
+    text-shadow: 0px 0px 10px var(--persian-indigo);
   }
   p{
+    text-align: justify;
     font-size: 2em;
   }
+}
+
+.multi-window-section{
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  align-items: start;
+  justify-self: start;
+  margin: 0;
+  gap: 3rem;
+  flex: 0.75;
+  max-width: 80vw;
+}
+.sub-snap-section{
+  display: block;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.media-scroller{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100vw;
+  
+  margin: 0 -10vw;
+  /* padding: 5%; */
+  overflow: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+}
+.media-element{
+  scroll-snap-align: start;
+  text-wrap-mode: wrap;
+  padding: 0 10%;
+}
+
+.glow-purple {
+  text-shadow: 0px 0px 10px var(--persian-indigo);
 }
