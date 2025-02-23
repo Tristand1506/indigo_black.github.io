@@ -252,56 +252,14 @@ background-color: var(--periwinkle);
   justify-content: center;
 }
 
+.about-text{
+  gap: 2rem;
+  align-items: center;
+  text-align: justify;
+}
 
 
 /* stuff under here needs to be fixed */
-
-
-.sub-snap-section{
-  display: block;
-  width: 80vw;
-}
-
-
-.media-group{
-  display: flex;
-  flex-direction: column;
-  scroll-snap-align: start;
-  text-wrap-mode: wrap;
-  padding: 0 10%;
-}
-.media-element{
-  margin: 0 -10vw;
-  width: 100vw;
-}
-
-
-.about-section{
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  gap: 5rem;
-  padding: 10% 10%;
-  h1{
-    text-align: center;
-    text-shadow: 0px 0px 10px var(--persian-indigo);
-    padding-bottom: 2rem;
-  }
-  p{
-    text-align: justify;
-    font-size: 2rem;
-  }
-}
-
-/* .demo-section{
-  h1{
-    position: absolute;
-    top: 5rem;
-    z-index: 1;
-  }
-} */
-
-
 
 .drop-shadow{
   box-shadow: 0px 0px 16px 4px #00000080;
