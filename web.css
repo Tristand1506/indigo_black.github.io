@@ -298,7 +298,11 @@ footer{
   flex: 0.8;
   gap: 1rem;
   align-items: center;
-  text-align: justify;
+  text-align: center;
+  p{
+    text-align: justify;
+  }
+
 }
 
 .drop-shadow{
@@ -368,7 +372,7 @@ footer{
     font-size: 1.5rem;
   }
   p{
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
   .nav-list{
     flex: 0.5;
