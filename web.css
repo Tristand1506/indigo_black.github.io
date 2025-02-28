@@ -234,15 +234,18 @@ footer{
   white-space: nowrap;
   scroll-snap-type: x mandatory;
   height: 100%;
+  width: 100%;
   scrollbar-width: none;
 }
 
 .scroll-container{
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   position: relative;
   scroll-snap-align: start;
   margin: 0;
+  width: 100vw;
   align-items: center;
   justify-content: center;
   overflow-y: hidden;
