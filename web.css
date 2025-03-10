@@ -10,11 +10,23 @@ Swatch Codes
  Resources
  Scroll Snap : https://www.youtube.com/watch?v=ytl6TrroGis
 */
+
+
+/* 
+TODO
+Give about image a min width! ***
+Shift up footer into narrative page.
+Investigate (JS Carosal): 
+- https://stackoverflow.com/questions/66400103/creating-a-carousel-in-js
+- https://youtu.be/GnK3GCQ_X_k?si=KtmAJrArAeL7zHIj
+- https://stackoverflow.com/questions/75576683/creating-an-image-carousel-using-vanilla-javascript
+
+*/
 :root{
   --persian-indigo: #44196d;
   --amethyst: #8d75b6;
   --periwinkle: #cbbde8;
-}
+} 
 html{
   background-color: black;
   scroll-snap-type: y mandatory;
@@ -24,7 +36,6 @@ html{
 }
 body{
   margin: 0;
-  
 }
 h1 ,h2, h3, p, ul, li{
   padding: 0;
@@ -144,7 +155,7 @@ footer{
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   overflow: scroll;
 }
 .nav-item {
@@ -157,7 +168,7 @@ footer{
 .nav-item::after {
   content: "";
   position: absolute;
-  left: calc(100% + 1rem - 0.15rem);
+  left: calc(100% + 0.75rem - 0.15rem);
   top: calc(50% - 0.15rem);
   height: 0.3rem;
   width: 0.3rem;
@@ -213,7 +224,7 @@ footer{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 5% 15%;
 }
 
@@ -306,7 +317,6 @@ footer{
   p{
     text-align: justify;
   }
-
 }
 
 .drop-shadow{
@@ -396,25 +406,47 @@ footer{
   }
 }
 
- @media screen and (min-width: 50rem) and (min-width: 50rem) {
+ @media screen and (min-width: 60rem) and (min-width: 60rem) {
 
-  .horisontal-scroller{
-    width: 100%;
-    grid-auto-columns: 50%;
-  }
-  .scroll-container{
-    scroll-snap-align: end;
-  }
-  .padded{
-    z-index: 1;
-  }
-  .horisontal-scroller :nth-child(1){
-    position: sticky;
-    left: 0;
-  }
-  .multi-section-container{
-    grid-auto-flow: row;
-  }
+   h1 {
+     font-size: 4rem;
+   }
+
+   h2 {
+     font-size: 3rem;
+   }
+
+   h3 {
+     font-size: 2rem;
+   }
+
+   p {
+     font-size: 1rem;
+   }
+
+   @media screen and (min-aspect-ratio: 1/1) {
+     .horisontal-scroller {
+       width: 100%;
+       grid-auto-columns: 50%;
+     }
+
+     .scroll-container {
+       scroll-snap-align: end;
+     }
+
+     .padded {
+       z-index: 1;
+     }
+
+     .horisontal-scroller :nth-child(1) {
+       position: sticky;
+       left: 0;
+     }
+
+     .multi-section-container {
+       grid-auto-flow: row;
+     }
+   }
 }
 
 
