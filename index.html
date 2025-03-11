@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="web.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>Indigo_Black Portfolio</title>
+  
 </head>
 
 <body>
@@ -15,11 +16,11 @@
   <nav class="nav-bar drop-shadow">
     <div class="nav-flair"></div>
     <ul class="nav-list">
-      <li class="nav-item"><a href="#About">About</a></li>
-      <li class="nav-item"><a href="#Demos">Demos</a></li>
-      <li class="nav-item"><a href="#3D">3D</a></li>
-      <li class="nav-item"><a href="#Illustration">Illustration</a></li>
-      <li class="nav-item"><a href="#Narrative">Narrative</a></li>
+      <li class="nav-item"><a href="#about">About</a></li>
+      <li class="nav-item"><a href="#demos">Demos</a></li>
+      <li class="nav-item"><a href="#3d">3D</a></li>
+      <li class="nav-item"><a href="#illustration">Illustration</a></li>
+      <li class="nav-item"><a href="#narrative">Narrative</a></li>
     </ul>
     <div class="nav-flair"></div>
   </nav>
@@ -53,11 +54,11 @@
       </div>
     </section>
 
-    <section id="Demos" class="snap-section">
-      <div class="horisontal-scroller">
-        <!-- ADD BUTTONS HERE -->
-        <div class="scroll-container padded">
-          <div class="text-group">
+    <section id="demos" class="snap-section">
+      <div class="horisontal-carousel">
+        
+        <div class="carousel-container">
+          <div class="text-group padded">
             <h1>Demos</h1>
             <p>
               Video games and the experiences they can offer are a huge part of what drove me into the tech space from such a young age. 
@@ -74,7 +75,7 @@
           </div>
         </div>
 
-        <div class="scroll-container">
+        <div class="carousel-container">
           <div class="showcase-group">
             <img class="showcase-image" src="src\Background.png" alt="">
             <div class="showcase-text">
@@ -87,7 +88,7 @@
           </div>
         </div>
 
-        <div class="scroll-container">
+        <div class="carousel-container">
           <div class="showcase-group">
             <img src="src\Background.png" alt="">
             <div class="showcase-text">
@@ -99,11 +100,14 @@
             </div>
           </div>
         </div>
-          <!-- ADD BUTTONS HERE -->
+      </div>
+      <div class="carousel-nav">
+        <button onclick="prev(demoCarousel)" class="carousel-button left">p</button>
+        <button onclick="next(demoCarousel)" class="carousel-button right">n</button>
       </div>
     </section>
-
-    <section id="3D" class="snap-section">
+    <script type="text/javascript" src="web.js"></script>
+    <!-- <section id="3d" class="snap-section">
         <div class="horisontal-scroller">
           <div class="scroll-container padded">
             <div class="text-group">
@@ -137,7 +141,7 @@
         </div>
       </section>
 
-      <section id="Illustration" class="snap-section">
+      <section id="illustration" class="snap-section">
         <div class="horisontal-scroller">
           <div class="scroll-container padded">
             <div class="text-group">
@@ -171,7 +175,7 @@
       </div>
     </section>
 
-    <section id="Narrative" class="snap-section">
+    <section id="narrative" class="snap-section">
       <div class="horisontal-scroller">
         <div class="scroll-container padded">
           <div class="text-group">
@@ -181,9 +185,8 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
-
   <footer>
     <h3>Links</h3>
     <div class="footer-flair"></div>
