@@ -33,6 +33,7 @@ html{
   margin: 0%;
   width: 100%;
   height: 100dvh;
+  scroll-behavior: smooth;
 }
 body{
   margin: 0;
@@ -248,6 +249,7 @@ footer{
   height: 100%;
   width: 100%;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 .scroll-container{
@@ -264,6 +266,63 @@ footer{
 }
 .padded{
   padding: 10vw;
+}
+
+.scroll-nav{
+  display: contents;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.scroll-button{
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  opacity: 100%;
+  text-decoration: none;
+  width: 2rem;
+  height: 100%;
+  color: white;
+}
+.scroll-button:hover{
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.left{
+  text-decoration: none;
+  position: absolute;
+  height: 100%;
+  left: 0rem;
+  
+}
+.right{
+  text-decoration: none;
+  position: absolute;
+  height: 100%;
+  right: 0rem;
+
+}
+.indicator-list{
+ position: absolute;
+ bottom: 0.5rem;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ gap: 1rem;
+ width: 100%;
+}
+.indicator{
+  width: 10px;
+  height: 10px;
+  list-style-type: none;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 1);
+}
+
+.indicator.active {
+  background-color: var(--amethyst);
 }
 
 .text-group{
