@@ -5,8 +5,10 @@ class HorisontalScroller{
     constructor(id){
         this.id = id; 
         this.el = document.getElementById(id);
-        this.items = Array.from(this.el.getElementsByClassName("scroll-container"));
-        this.creatNav();
+        this.list = this.el.querySelector(".horisontal-scroller")
+        this.items = Array.from(this.list.getElementsByClassName("scroll-container"));
+        this. navElements = this.creatNav();
+        this.isTextAdjusted = false;
         this.init();
     }
     
@@ -21,6 +23,21 @@ class HorisontalScroller{
             console.log(item);
             this.observer.observe(item);
         });
+    }
+
+    update(){
+      this.items.forEach(item => {
+        console.log(item);
+        this.observer.unobserve(item);
+      });
+      this.items = Array.from(this.list.getElementsByClassName("scroll-container"));
+      this.injectElementIDs();
+      this.el.removeChild(this.navElements);
+      this.navElements = this.creatNav();
+      this.items.forEach(item => {
+        console.log(item);
+        this.observer.observe(item);
+    });
     }
     
     injectElementIDs(){
@@ -61,34 +78,7 @@ class HorisontalScroller{
         scrollNav.appendChild(indicators);
 
         this.el.appendChild(scrollNav);
-    }
-
-    next(){
-      console.log("Going next");
-      this.activeItemIndex = this.activeItemIndex + 1;
-      this.navLeft.setAttribute('href', "#"+this.id + "-" + (this.activeItemIndex - 1));
-      this.navRight.setAttribute('href', "#"+this.id + "-" + (this.activeItemIndex + 1));
-      if(this.activeItemIndex >= this.items.length-1){
-        this.navRight.style.display = "none";
-      }
-      else{
-        this.navLeft.style.display = "block";
-        this.navRight.style.display = "block";
-      }
-    }
-
-    prev(){
-      console.log("Going prev");
-      this.activeItemIndex = this.activeItemIndex - 1;
-      this.navLeft.setAttribute('href', "#"+this.id + "-" + (this.activeItemIndex - 1));
-      this.navRight.setAttribute('href', "#"+this.id + "-" + (this.activeItemIndex + 1));
-      if(this.activeItemIndex <= 0){
-        this.navLeft.style.display = "none";
-      }
-      else{
-        this.navLeft.style.display = "block";
-        this.navRight.style.display = "block";
-      }
+        return scrollNav;
     }
 }
 
@@ -125,22 +115,59 @@ function onIntersectionObserved(entries) {
 
     if(index <= 0){
       navLeft.style.display = "none";
+      navRight.style.display = "flex";
     }
     else if(index >= navSize-1){
       navRight.style.display = "none";
+      navLeft.style.display = "flex";
     }
     else{
       console.log("Display both navs")
-      navRight.style.display = "block";
-      navLeft.style.display = "block";
+      navRight.style.display = "flex";
+      navLeft.style.display = "flex";
     }
   }
 
+  function adjustText(event,horisontalScroller){
+
+    if(event.matches && !horisontalScroller.isTextAdjusted){
+      console.log("Desktop sizing detected, Adjusting Text");
+      const textElement = horisontalScroller.items[0]; 
+      textElement.setAttribute("id", "");
+      console.log(textElement);
+      horisontalScroller.list.removeChild(textElement);
+      console.log(textElement);
+      horisontalScroller.el.insertBefore(textElement,horisontalScroller.list);
+      horisontalScroller.update();
+      horisontalScroller.isTextAdjusted = true;
+    }
+    else if(horisontalScroller.isTextAdjusted) {
+      const textElement = horisontalScroller.el.getElementsByClassName("scroll-container")[0];
+      console.log(textElement);
+      horisontalScroller.el.removeChild(textElement);
+      console.log(textElement);
+      horisontalScroller.list.insertBefore(textElement,horisontalScroller.items[0]);
+      horisontalScroller.update();
+      horisontalScroller.isTextAdjusted = false;
+    }
+  }
+
+const desktopCheck = window.matchMedia("screen and (min-width: 60rem) and (min-width: 60rem) and (min-aspect-ratio: 1/1)");
 
 
 
 demos = new HorisontalScroller("demos");
 threeD = new HorisontalScroller("3d");
 illustration = new HorisontalScroller("illustration");
+
+adjustText(desktopCheck,demos);
+adjustText(desktopCheck,threeD);
+adjustText(desktopCheck,illustration);
+
+desktopCheck.addEventListener("change", function(){
+  adjustText(desktopCheck,demos);
+  adjustText(desktopCheck,threeD);
+  adjustText(desktopCheck,illustration);
+});
 
 

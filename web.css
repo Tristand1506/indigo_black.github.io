@@ -259,7 +259,8 @@ footer{
   position: relative;
   scroll-snap-align: start;
   margin: 0;
-  
+  width: 100%;
+  height: 100%;
   align-items: center;
   justify-content: center;
   overflow-y: hidden;
@@ -276,16 +277,24 @@ footer{
 }
 
 .scroll-button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(255, 255, 255, 0);
+  font-size: 2rem;
   border: none;
   opacity: 100%;
   text-decoration: none;
   width: 2rem;
   height: 100%;
   color: white;
+  transition: background-color 0.25s;
 }
-.scroll-button:hover{
-  background-color: rgba(255, 255, 255, 0.25);
+@media (hover: hover){
+  .scroll-button:hover{
+    background-color: rgba(255, 255, 255, 0.25);
+  }
 }
 
 .left{
@@ -293,15 +302,14 @@ footer{
   position: absolute;
   height: 100%;
   left: 0rem;
-  
 }
 .right{
   text-decoration: none;
   position: absolute;
   height: 100%;
   right: 0rem;
-
 }
+
 .indicator-list{
  position: absolute;
  bottom: 0.5rem;
@@ -485,8 +493,10 @@ footer{
 
    @media screen and (min-aspect-ratio: 1/1) {
      .horisontal-scroller {
-       width: 100%;
-       grid-auto-columns: 50%;
+      position: absolute;
+       width: 50%;
+       grid-auto-columns: 100%;
+       right: 0;
      }
 
      .scroll-container {
@@ -495,11 +505,16 @@ footer{
 
      .padded {
        z-index: 1;
+       width: 50%;
+       left: 0;
      }
 
-     .horisontal-scroller :nth-child(1) {
-       position: sticky;
-       left: 0;
+     .left{
+      left: 50%;
+     }
+     .indicator-list{
+      width: 50%;
+      right: 0;
      }
 
      .multi-section-container {
