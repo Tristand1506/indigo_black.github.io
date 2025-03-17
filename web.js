@@ -1,3 +1,25 @@
+/**
+ * 
+ */
+
+const ScrollRightHandler = (id) => {
+  const testElem = document.getElementById(id)
+  if (testElem) {
+    testElem.addEventListener('click', (e) => {
+      testElem.scroll(0, testElem.clientWidth)
+    })
+  }
+  testElem.addEventListener('scroll', (e) => {
+    testElem.scroll(0, testElem.clientWidth)
+  })
+}
+
+const scrollHandler = (e) => {
+  const scrollPos = e.currentTarget.scrollLeft
+  console.log({scrollPos})
+}
+
+
 class HorisontalScroller{
 
     activeItemIndex = 0;
@@ -133,9 +155,10 @@ function onIntersectionObserved(entries) {
     if(event.matches && !horisontalScroller.isTextAdjusted){
       console.log("Desktop sizing detected, Adjusting Text");
       const textElement = horisontalScroller.items[0]; 
-      textElement.setAttribute("id", "");
       console.log(textElement);
       horisontalScroller.list.removeChild(textElement);
+      textElement.setAttribute("id", "");
+      textElement.classList.toggle("adjusted");
       console.log(textElement);
       horisontalScroller.el.insertBefore(textElement,horisontalScroller.list);
       horisontalScroller.update();
@@ -145,6 +168,7 @@ function onIntersectionObserved(entries) {
       const textElement = horisontalScroller.el.getElementsByClassName("scroll-container")[0];
       console.log(textElement);
       horisontalScroller.el.removeChild(textElement);
+      textElement.classList.toggle("adjusted");
       console.log(textElement);
       horisontalScroller.list.insertBefore(textElement,horisontalScroller.items[0]);
       horisontalScroller.update();

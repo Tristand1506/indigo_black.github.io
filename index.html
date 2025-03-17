@@ -26,7 +26,7 @@
 
   <main>
 
-    <section id="about" class="snap-section">
+    <section id="about" class="snap-section" name="about">
       <div class="section-container center-content">
         <img class="about-image" src="src\Indigo Icon@0.5x.png" alt="">
         <div class="text-group about-text">
@@ -44,12 +44,13 @@
             I'm still developing my skill sets in order to take on even greater challenges in these creative spaces, ultimately aiming to shake up the game development 
             space through collaborative effort.
           </p>
+          <ul class="links glow-purple">
+            <li><a href="https://github.com/Tristand1506"><i class="bi bi-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/tristanvwyk"><i class="bi bi-linkedin"></i></a></li>
+            <li><a href=""><i class="bi bi-envelope-fill"></i></a></li>
+          </ul>
         </div>
-        <ul class="links glow-purple">
-          <li><a href="https://github.com/Tristand1506"><i class="bi bi-github"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/tristanvwyk"><i class="bi bi-linkedin"></i></a></li>
-          <li><a href=""><i class="bi bi-envelope-fill"></i></a></li>
-        </ul>
+
       </div>
     </section>
 
@@ -59,7 +60,7 @@
       <div class="horisontal-scroller">
         <!-- ADD BUTTONS HERE -->
         
-        <div class="scroll-container padded">
+        <div class="scroll-container padded ">
           <div class="text-group">
             <h1>Demos</h1>
             <p>
@@ -109,13 +110,14 @@
 
     <section id="3d" class="snap-section">
         <div class="horisontal-scroller">
-          <div class="scroll-container padded">
+          <div class="scroll-container padded" id="scrollContainer1">
             <div class="text-group">
               <h2>3D</h2>
               <p>Various 3D models and animations.</p>
               <br>
               <p style="text-align: right; font-style: italic;">Take a look <i class="bi bi-arrow-right"></i></p>
             </div>
+            </button>
           </div>
 
           <div class="scroll-container">
@@ -188,19 +190,16 @@
     </section>
   </main>
   <script src="web.js"></script>
-  <footer>
-    <h3>Links</h3>
-    <div class="footer-flair"></div>
-    <ul>
-      <li><a href="https://github.com/Tristand1506"><i class="bi bi-github"></i>
-          <p>GitHub</p>
+  <footer class="nav-bar footer-nav">
+    <div class="nav-flair"></div>
+    <ul class="nav-list">
+      <li class="nav-item"><a href="https://github.com/Tristand1506"><i class="bi bi-github"></i> GitHub 
         </a></li>
-      <li><a href="https://www.linkedin.com/in/tristanvwyk"><i class="bi bi-linkedin"></i>
-          <p>LinkedIn</p>
+      <li class="nav-item"><a href="https://www.linkedin.com/in/tristanvwyk"><i class="bi bi-linkedin"></i> LinkedIn
         </a></li>
-      <li><a href=""><i class="bi bi-envelope-fill"></i>
-          <p>Contact Me</p>
+      <li class="nav-item"><a href=""><i class="bi bi-envelope-fill"></i> Email
         </a></li>
     </ul>
+    <div class="nav-flair"></div>
   </footer>
 </body>
