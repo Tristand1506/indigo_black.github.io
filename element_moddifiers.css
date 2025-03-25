@@ -1,0 +1,59 @@
+.image-circular > img{
+  border-radius: 50%;
+}
+
+.center-content{
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image{
+  flex: 0.5;
+  max-width: 100%;
+  object-fit: scale-down;
+  min-width: 0;
+  min-height: 0;
+}
+.about-text{
+  flex: 0.8;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  p{
+    text-align: justify;
+  }
+}
+
+.drop-shadow{
+  box-shadow: 0px 0px 16px 4px #00000080;
+}
+
+.glow-purple {
+  text-shadow: 0px 0px 10px var(--persian-indigo);
+}
+
+.periwinkle{
+  color: var(--periwinkle);
+}
+.persian-indigo{
+  color: var(--persian-indigo);
+}
+.amythest{
+  color: var(--amythest);
+}
+
+@media screen and (min-aspect-ratio: 1.25/1){
+  .about-text{
+    text-align: start;
+    align-items: start;
+    flex: 0.6;
+    text-wrap-mode: wrap;
+  }
+  .about-image{
+    flex: 0.2;
+    max-width: 15rem;
+  }
+  .center-content{
+    justify-content: space-between;
+  }
+}

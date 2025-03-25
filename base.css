@@ -1,0 +1,113 @@
+/* Reset some broser defaults */
+/* 
+Swatch Codes
+ Black - #000000
+ Persian Indigo - #44196d  68, 25, 109
+ Amethyst - #8d75b6
+ Periwinkle - #cbbde8
+ White - ffffff 
+
+ Resources
+ Scroll Snap : https://www.youtube.com/watch?v=ytl6TrroGis
+*/
+
+
+/* 
+TODO
+Give about image a min width! ***
+Shift up footer into narrative page.
+Investigate (JS Carosal): 
+- https://stackoverflow.com/questions/66400103/creating-a-carousel-in-js
+- https://youtu.be/GnK3GCQ_X_k?si=KtmAJrArAeL7zHIj
+- https://stackoverflow.com/questions/75576683/creating-an-image-carousel-using-vanilla-javascript
+
+*/
+:root {
+    --persian-indigo: #44196d;
+    --amethyst: #8d75b6;
+    --periwinkle: #cbbde8;
+}
+
+html {
+    background-color: black;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    margin: 0%;
+    width: 100%;
+    height: 100dvh;
+    /* user-select: none; */
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+    padding: 0;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+h4 {
+    margin: 0;
+}
+
+p {
+    font-size: 0.75rem;
+    margin: 0;
+    margin-bottom: 0.25rem;
+}
+
+@media screen and (( min-width: 32rem) and (min-height:32rem)){
+    h1{
+        font-size: 3.5rem;
+      }
+      h2{
+        font-size: 2.5rem;
+      }
+      h3{
+        font-size: 1.5rem;
+      }
+      p{
+        font-size: 0.75rem;
+      }
+}
+
+@media screen and (min-width: 60rem) and (min-width: 60rem){
+    h1 {
+        font-size: 4rem;
+      }
+   
+      h2 {
+        font-size: 3rem;
+      }
+   
+      h3 {
+        font-size: 2rem;
+      }
+   
+      p {
+        font-size: 1rem;
+      }
+}

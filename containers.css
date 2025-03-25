@@ -1,0 +1,142 @@
+.snap-section {
+    display: flex;
+    position: relative;
+    background-color: black;
+    scroll-snap-align: start;
+    scroll-margin-top: 4rem;
+    height: calc(100dvh - 8rem);
+
+    .scroll-container {
+        background-color: black;
+    }
+}
+
+.snap-section:nth-child(even) {
+    background-color: var(--persian-indigo);
+
+    h1,
+    h2,
+    h3,
+    p {
+        color: white;
+    }
+
+    .scroll-container {
+        background-color: var(--persian-indigo);
+    }
+
+    .showcase-text {
+        background-color: rgba(68, 25, 109, 0.75);
+    }
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5% 15%;
+}
+
+.multi-section-container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: 1fr;
+    align-items: start;
+    justify-self: start;
+    margin: 0;
+    flex: 1;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+    justify-content: space-around;
+    flex: 0.2;
+
+    li {
+        position: relative;
+        text-align: center;
+        font-size: 1.5rem;
+
+        i {
+            font-size: 1rem;
+        }
+
+        p {
+            position: absolute;
+            text-align: center;
+        }
+    }
+}
+
+.links li>a:link,
+a:visited {
+    color: white;
+}
+
+.links li>a:hover {
+    color: var(--periwinkle);
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-wrap-mode: wrap;
+    flex: 1;
+}
+
+.showcase-group {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.showcase-text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    box-sizing: border-box;
+    text-wrap-mode: wrap;
+    width: 100%;
+    bottom: 0;
+    padding: 1.5rem 1.5rem 3rem;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (min-aspect-ratio: 1.25/1) {
+    .section-container {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding: 0 10vw;
+    }
+
+    .multi-section-container {
+        grid-auto-flow: column;
+    }
+
+    @media screen and (min-width: 65rem) {
+        .links {
+            bottom: calc(50% - 9rem);
+        }
+    }
+}
+
+@media screen and (min-width: 60rem) and (min-width: 60rem) {
+    @media screen and (min-aspect-ratio: 1/1) {
+        .multi-section-container {
+            grid-auto-flow: row;
+        }
+    }
+}

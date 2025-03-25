@@ -1,0 +1,124 @@
+.horisontal-scroller{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    height: 100%;
+    width: 100%;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+  }
+  
+  .scroll-container{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    scroll-snap-align: start;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+  }
+  .adjusted{
+    scroll-snap-align: unset;
+  }
+  .padded{
+    padding: 10vw;
+  }
+  
+  .scroll-nav{
+    display: contents;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  
+  .scroll-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 2rem;
+    border: none;
+    opacity: 100%;
+    text-decoration: none;
+    width: 2rem;
+    height: 25%;
+    color: white;
+    transition: background-color 0.25s;
+  }
+  @media (hover: hover){
+    .scroll-button:hover{
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+  }
+  
+  .left{
+    text-decoration: none;
+    position: absolute;
+    height: 100%;
+    align-items: center;
+    left: 0rem;
+  }
+  .right{
+    text-decoration: none;
+    position: absolute;
+    height: 100%;
+    align-items: center;
+    right: 0rem;
+  }
+  
+  .indicator-list{
+   position: absolute;
+   margin: 0;
+   bottom: 1.5rem;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   width: 100%;
+  }
+  .indicator{
+    width: 10px;
+    height: 10px;
+    list-style-type: none;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 1);
+  }
+  
+  .indicator.active {
+    background-color: var(--amethyst);
+  }
+
+  @media screen and (min-width: 60rem) and (min-width: 60rem) {
+    @media screen and (min-aspect-ratio: 1/1) {
+      .horisontal-scroller {
+       position: absolute;
+        width: 50%;
+        grid-auto-columns: 100%;
+        right: 0;
+      }
+ 
+      .padded {
+        /* z-index: 1; */
+        width: 50%;
+        left: 0;
+      }
+ 
+      .left{
+       left: 50%;
+      }
+      .indicator-list{
+       width: 50%;
+       right: 0;
+      }
+}
+ }

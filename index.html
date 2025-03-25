@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<!-- 
+Add enlageing image to carosel
+https://www.w3schools.com/CSS/tryit.asp?filename=trycss_image_gallery_responsive_js 
+-->
+
 <head>
   <meta charset="utf-8" lang="en" />
   <meta name="Indigo_Black Portfolio" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="web.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="containers.css">
+  <link rel="stylesheet" href="scroller.css">
+  <link rel="stylesheet" href="modalViewer.css">
+  <link rel="stylesheet" href="element_moddifiers.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <title>Indigo_Black Portfolio</title>
+  <title>Tristan van Wyk Portfolio</title>
 </head>
 
 <body>
@@ -19,7 +30,7 @@
       <li class="nav-item"><a href="#demos">Demos</a></li>
       <li class="nav-item"><a href="#3d">3D</a></li>
       <li class="nav-item"><a href="#illustration">Illustration</a></li>
-      <li class="nav-item"><a href="#narrative">Narrative</a></li>
+      <!-- <li class="nav-item"><a href="#narrative">Narrative</a></li> -->
     </ul>
     <div class="nav-flair"></div>
   </nav>
@@ -39,14 +50,17 @@
           <p>
             Creative, ambitious, and inspiring. My out-the-box approach to problem solving and steadfast determination pushes me to innovate on the exceptional!
             <br>
-            I've dipped my toes into many different fields of design and found a small home in all of them. My ambitions have taken me from programming to illustration 
-            and the desire to leave an impact with my work continues to drive its creation.    
-            I'm still developing my skill sets in order to take on even greater challenges in these creative spaces, ultimately aiming to shake up the game development 
-            space through collaborative effort.
+            I've dipped my toes into many different fields and found a small home in each of them with my ambitions taking me anywhere from programming to illustration. 
+            The desire to leave an impact with my work is what continues to drive its creation, figueing out the answers to the many questions that lie on the path to that goal.
+            I'm curently working on developing my skill sets in order to take on even greater challenges in these creative spaces, ultimately aiming to shake up the game development 
+            space through collaborative effort and shared vision.
+            <br><br>
+            <a class="amythest" href="https://www.canva.com/design/DAGiupDOJkc/F--Q3PAb5YwOZCadNuFZqQ/view?utm_content=DAGiupDOJkc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc6672b34c6" target="_blank">Check out my CV</a> or contact me using the links below!
           </p>
+          
           <ul class="links glow-purple">
-            <li><a href="https://github.com/Tristand1506"><i class="bi bi-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/tristanvwyk"><i class="bi bi-linkedin"></i></a></li>
+            <li><a href="https://github.com/Tristand1506" target="_blank"><i class="bi bi-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/tristanvwyk" target="_blank"><i class="bi bi-linkedin"></i></a></li>
             <li><a href=""><i class="bi bi-envelope-fill"></i></a></li>
           </ul>
         </div>
@@ -56,10 +70,8 @@
 
     <section id="demos" class="snap-section">
       
-      
       <div class="horisontal-scroller">
-        <!-- ADD BUTTONS HERE -->
-        
+
         <div class="scroll-container padded ">
           <div class="text-group">
             <h1>Demos</h1>
@@ -93,7 +105,7 @@
 
         <div class="scroll-container">
           <div class="showcase-group">
-            <img src="src\Background.png" alt="">
+            <img class="showcase-image" src="src\Background.png" alt="">
             <div class="showcase-text">
               <h3>Hear Me</h3>
               <p>
@@ -113,7 +125,7 @@
           <div class="scroll-container padded" id="scrollContainer1">
             <div class="text-group">
               <h2>3D</h2>
-              <p>Various 3D models and animations.</p>
+              <p>Various 3D models and animations made useing Blender and 3DS MAX. </p>
               <br>
               <p style="text-align: right; font-style: italic;">Take a look <i class="bi bi-arrow-right"></i></p>
             </div>
@@ -122,21 +134,20 @@
 
           <div class="scroll-container">
             <div class="showcase-group">
-              <div class="showcase-image"></div>
-              <img src="src\Background.png" alt="">
+              <img class="showcase-image" src="src\Background.png" alt="">
               <div class="showcase-text">
-                <h3>Hear Me</h3>
-                <p>some random text to test this</p>
+                <h3>Work In Progress</h3>
+                <p>This website Is Still Under construction. Current images and media may be placeholders and are subject to changes</p>
               </div>
             </div>
           </div>
 
           <div class="scroll-container">
             <div class="showcase-group">
-              <img src="src\Background.png" alt="">
+              <img class="showcase-image" src="src\Background.png" alt="">
               <div class="showcase-text">
-                <h3>Hear Me</h3>
-                <p>some random text to test this</p>
+                <h3>Work In Progress</h3>
+                <p>This website Is Still Under construction. Current images and media may be placeholders and are subject to changes</p>
               </div>
             </div>
           </div>
@@ -156,28 +167,47 @@
 
           <div class="scroll-container">
             <div class="showcase-group">
-              <img src="src\Background.png" alt="">
+              <img class="showcase-image" src="src\Background.png" alt="">
               <div class="showcase-text">
-                <h3>Hear Me</h3>
-                <p>some random text to test this</p>
+                <h3>Twitch Assets</h3>
+                <p>During a time, I dipped my toes into the world of streaming and had the opportunity to experiment with new programs, such as After Effects.
+                  It also gave me a reason to create a series of visually coherent designs to use across my page.
+                  Here you can see a few of the assets I made for my Twitch page.
+                </p>
               </div>
             </div>
           </div>
 
           <div class="scroll-container">
             <div class="showcase-group">
-              <img src="src\Background.png" alt="">
+              <img class="showcase-image" src="src\Background.png" alt="">
               <div class="showcase-text">
-                <h3>Hear Me</h3>
-                <p>some random text to test this</p>
+                <h3>Board & Card Games</h3>
+                <p>I spent a lot of time designing assets for board and card games in college. 
+                  I still enjoy tabletop games and love making and designing assets for my favorite games like D&D and Magic: The Gathering. 
+                  Here are some of the boxes and cards I designed for my game, Rival Shards. 
+                </p>
               </div>
             </div>
           </div>
+
+          <div class="scroll-container">
+            <div class="showcase-group">
+              <img class="showcase-image" src="src\Background.png" alt="">
+              <div class="showcase-text">
+                <h3>Splash Screens</h3>
+                <p>Here are the splash arts for two of the game concepts I created while in college. 
+                  Glass is an action adventure style game, while Eldritch Dark is more of a multiplayer 'Among Us' style game with Lovecraftian elements.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section id="narrative" class="snap-section">
+    <!-- <section id="narrative" class="snap-section">
       <div class="horisontal-scroller">
         <div class="scroll-container padded">
           <div class="text-group">
@@ -187,17 +217,27 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
-  <script src="web.js"></script>
+
+  <!-- Enlarged Image viewer -->
+  <div id="modal" class="modal">
+    <span class="close">X</span>
+    <img class="modal-content" id="modal-img">
+    <div id="caption"></div>
+  </div>
+
+
+  <script src="Scroller.js"></script>
+  <script src="imageViewer.js"></script>
   <footer class="nav-bar footer-nav">
     <div class="nav-flair"></div>
     <ul class="nav-list">
-      <li class="nav-item"><a href="https://github.com/Tristand1506"><i class="bi bi-github"></i> GitHub 
+      <li class="nav-item"><a href="https://github.com/Tristand1506" target="_blank"><i class="bi bi-github"></i> GitHub 
         </a></li>
-      <li class="nav-item"><a href="https://www.linkedin.com/in/tristanvwyk"><i class="bi bi-linkedin"></i> LinkedIn
+      <li class="nav-item"><a href="https://www.linkedin.com/in/tristanvwyk" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn
         </a></li>
-      <li class="nav-item"><a href=""><i class="bi bi-envelope-fill"></i> Email
+      <li class="nav-item"><a href="" target="_blank"><i class="bi bi-envelope-fill"></i> Email
         </a></li>
     </ul>
     <div class="nav-flair"></div>
